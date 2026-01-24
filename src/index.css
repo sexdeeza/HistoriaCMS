@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-royal-cream dark:bg-royal-dark text-gray-900 dark:text-gray-100 transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-royal-rose hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-lg shadow-royal transition-all duration-200 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-royal-blue hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all duration-200 hover:scale-105;
+  }
+
+  .card {
+    @apply bg-white dark:bg-royal-darker rounded-xl shadow-lg p-6 transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-royal-pink dark:focus:border-royal-pink focus:outline-none transition-colors;
+  }
+
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-200 hover:text-royal-rose dark:hover:text-royal-pink font-medium transition-colors duration-200;
+  }
+}
+
+/* Falling Blossoms Animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(15px) rotate(10deg);
+  }
+  75% {
+    transform: translateX(-15px) rotate(-10deg);
+  }
+}
+
+.animate-fall {
+  animation: fall linear infinite;
+}
+
+.animate-sway {
+  animation: sway ease-in-out infinite;
+}
+
+/* Dripping blossom animation */
+@keyframes drip {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(60px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.animate-drip {
+  animation: drip 4s ease-in infinite;
+}
+
+/* Animated Background */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg, #fff5f5, #fce4ec, #f3e5f5, #ede7f6, #fff5f5);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+.dark .animated-bg {
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #1a1a2e, #0f0f1a, #1a1a2e);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+.floating-orb {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Shimmer/Gradient Animation for Text */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ec4899 0%,
+    #f472b6 25%,
+    #a855f7 50%,
+    #f472b6 75%,
+    #ec4899 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Logo Glow Animation */
+@keyframes logoGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(232, 67, 147, 0.6));
+  }
+}
+
+.logo-hover:hover {
+  animation: logoGlow 1.5s ease-in-out infinite;
+}
+
+.logo-hover:hover .logo-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Navbar Scroll Effect */
+.navbar-scrolled {
+  @apply py-2 shadow-lg;
+  backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.dark .navbar-scrolled {
+  background-color: rgba(26, 26, 46, 0.95);
+}
+
