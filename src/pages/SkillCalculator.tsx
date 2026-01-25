@@ -45,6 +45,7 @@ const SkillCalculator: React.FC = () => {
     {
       name: 'Explorer - Pirate',
       jobs: [
+        { id: 508, name: 'Jett' },
         { id: 512, name: 'Buccaneer' },
         { id: 522, name: 'Corsair' },
         { id: 532, name: 'Cannoneer' },
